@@ -68,7 +68,7 @@ double ADS1112::readADC()
   
   	long t = h << 8 |  l;
   	
-	if (t >= 32768) t = 65536l - t;
+	if (t >= 32768) t -= 65536l;
   	
 	double v = (double) t * 2.048/32768.0;
 
